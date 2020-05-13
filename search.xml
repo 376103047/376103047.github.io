@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>谢大厨菜单</title>
+      <link href="/2020/05/10/%E8%B0%A2%E5%A4%A7%E5%8E%A8%E8%8F%9C%E5%8D%95/"/>
+      <url>/2020/05/10/%E8%B0%A2%E5%A4%A7%E5%8E%A8%E8%8F%9C%E5%8D%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="未做菜单："><a href="#未做菜单：" class="headerlink" title="未做菜单："></a>未做菜单：</h2><h4 id="汤类："><a href="#汤类：" class="headerlink" title="汤类："></a>汤类：</h4><pre><code>茶树菇排骨汤玉米胡萝卜排骨汤番茄肉丸汤萝卜老鸭汤淮山排骨汤</code></pre><h4 id="肉类："><a href="#肉类：" class="headerlink" title="肉类："></a>肉类：</h4><h4 id="菜类："><a href="#菜类：" class="headerlink" title="菜类："></a>菜类：</h4><h2 id="已做菜单："><a href="#已做菜单：" class="headerlink" title="已做菜单："></a>已做菜单：</h2><h4 id="汤类：-1"><a href="#汤类：-1" class="headerlink" title="汤类："></a>汤类：</h4><h4 id="肉类：-1"><a href="#肉类：-1" class="headerlink" title="肉类："></a>肉类：</h4><h4 id="菜类：-1"><a href="#菜类：-1" class="headerlink" title="菜类："></a>菜类：</h4><pre><code>蒜爆苦麦菜鸡蛋炒葱蛋饼蒜爆空心菜（失败了，淦）</code></pre><p>大厨之路任重道远啊~</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 谢大厨 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编实验之BX有符号十进制输出</title>
+      <link href="/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/"/>
+      <url>/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/</url>
+      
+        <content type="html"><![CDATA[<h4 id="实验任务：-BX-中的有符号数以十进制的形式输出"><a href="#实验任务：-BX-中的有符号数以十进制的形式输出" class="headerlink" title="实验任务： BX 中的有符号数以十进制的形式输出"></a>实验任务： BX 中的有符号数以十进制的形式输出</h4><p>实验思路及代码：</p><p>DATAS SEGMENT<br>    ;此处输入数据段代码<br>DATAS ENDS</p><p>STACKS SEGMENT<br>    ;此处输入堆栈段代码<br>    DW 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0<br>STACKS ENDS</p><p>CODES SEGMENT<br>    ASSUME CS:CODES,DS:DATAS,SS:STACKS<br>START:<br>    ;此处输入代码段代码<br>    ;使用div指令进行除数为10的运算，将dx置零达到计算bx的目的，余数压栈倒序输出</p><pre><code>mov bx,1000100100011101B;输入bx为-2333的原码SHL bx,1;循环左移一位到cf判断正负JNC NEXT;如果cf为0则跳过转输出负号mov dl,&apos;-&apos;;输出负号mov ah,2int 21h</code></pre><p>NEXT:<br>    SHR bx,1;循环右移一位恢复原本大小<br>    mov ax,bx;将被除数放入ax<br>    mov dx,0;高十六位置零<br>    mov bx,10;放入除数10</p><pre><code>mov cx,16;循环次数</code></pre><p>L1: div bx;即ax/10 = ax…dx<br>    adc dx,30H<br>    push dx;余数压栈<br>    mov dx,0;高位重新置零进行下一次循环<br>    LOOP L1</p><pre><code>mov cx,16;循环次数</code></pre><p>L2: pop dx;余数出栈<br>    mov ah,2;INT21 的二号功能，输出DL（一次只输出一个商）<br>    INT 21H<br>    LOOP L2</p><pre><code>MOV AH,4CHINT 21HCODES ENDSEND START</code></pre><h4 id="知识点总结：先右移一位得到符号位再左移恢复数据大小，要是cf是1说明是负数输出负号，否则用JNC跳过输出负号，我真聪明嘿嘿"><a href="#知识点总结：先右移一位得到符号位再左移恢复数据大小，要是cf是1说明是负数输出负号，否则用JNC跳过输出负号，我真聪明嘿嘿" class="headerlink" title="知识点总结：先右移一位得到符号位再左移恢复数据大小，要是cf是1说明是负数输出负号，否则用JNC跳过输出负号，我真聪明嘿嘿"></a>知识点总结：先右移一位得到符号位再左移恢复数据大小，要是cf是1说明是负数输出负号，否则用JNC跳过输出负号，我真聪明嘿嘿</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 汇编实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编实验之BX十六进制/十进制输出</title>
+      <link href="/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6or%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/"/>
+      <url>/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6or%E5%8D%81%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/</url>
+      
+        <content type="html"><![CDATA[<h4 id="实验任务：-BX-中的无符号数以十六进制的形式输出"><a href="#实验任务：-BX-中的无符号数以十六进制的形式输出" class="headerlink" title="实验任务： BX 中的无符号数以十六进制的形式输出"></a>实验任务： BX 中的无符号数以十六进制的形式输出</h4><p>实验思路及代码：</p><p>DATAS SEGMENT<br>    ;此处输入数据段代码<br>DATAS ENDS</p><p>STACKS SEGMENT<br>    ;此处输入堆栈段代码<br>    DW 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0<br>STACKS ENDS</p><p>CODES SEGMENT<br>    ASSUME CS:CODES,DS:DATAS,SS:STACKS<br>START:<br>    ;此处输入代码段代码<br>    ;使用div指令进行除数为16位的运算，将dx置零达到计算bx的目的，余数压栈倒序输出</p><pre><code>mov bx,9011;输入bxmov ax,bx;将被除数放入axmov dx,0;高十六位置零mov bx,16;放入除数16mov cx,16;循环次数</code></pre><p>L1: div bx;即ax/16 = ax…dx<br>    adc dx,30H<br>    push dx;余数压栈<br>    mov dx,0;高位重新置零进行下一次循环<br>    LOOP L1</p><pre><code>mov cx,16;循环次数</code></pre><p>L2: pop dx;余数出栈<br>    mov ah,2;INT21 的二号功能，输出DL（一次只输出一个商）<br>    INT 21H<br>    LOOP L2</p><pre><code>MOV AH,4CHINT 21HCODES ENDSEND START</code></pre><h4 id="知识点总结：DIV指令默认AX为被除数，当除数为16位时公式为（DX）-AX-NUM-AX-…-DH-，将DX作为高十六位，AX作为低16位拼成32位的被除数"><a href="#知识点总结：DIV指令默认AX为被除数，当除数为16位时公式为（DX）-AX-NUM-AX-…-DH-，将DX作为高十六位，AX作为低16位拼成32位的被除数" class="headerlink" title="知识点总结：DIV指令默认AX为被除数，当除数为16位时公式为（DX）(AX)/NUM=(AX)…(DH)，将DX作为高十六位，AX作为低16位拼成32位的被除数"></a>知识点总结：DIV指令默认AX为被除数，当除数为16位时公式为（DX）(AX)/NUM=(AX)…(DH)，将DX作为高十六位，AX作为低16位拼成32位的被除数</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 汇编实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编实验之BX八进制输出</title>
+      <link href="/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/"/>
+      <url>/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/</url>
+      
+        <content type="html"><![CDATA[<h4 id="实验任务：-BX-中的无符号数以八进制的形式输出"><a href="#实验任务：-BX-中的无符号数以八进制的形式输出" class="headerlink" title="实验任务： BX 中的无符号数以八进制的形式输出"></a>实验任务： BX 中的无符号数以八进制的形式输出</h4><p>实验思路及代码：</p><p>DATAS SEGMENT<br>    ;此处输入数据段代码<br>DATAS ENDS</p><p>STACKS SEGMENT<br>    ;此处输入堆栈段代码<br>    DW 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0<br>STACKS ENDS</p><p>CODES SEGMENT<br>    ASSUME CS:CODES,DS:DATAS,SS:STACKS<br>START:<br>    ;此处输入代码段代码<br>    ;使用div指令进行除数为八位的计算，(AX)/NUM=(AL)…(AH)，将余数压栈，倒序输出得到八进制数<br>    MOV BX,1243;输入BX<br>    MOV AX,BX;将被除数放入AX<br>    MOV CX,16;循环次数<br>    MOV DH,8;除数</p><p>L1: DIV DH;AX/8,商放在AL，余数放在AH<br>    ADC AH,30H;转换成ASCII<br>    MOV BX,0;转存AH<br>    MOV BL,AH<br>    PUSH BX;AH压栈<br>    MOV AH,0;清除高位余数进行下一次除法<br>    LOOP L1</p><pre><code>MOV CX,16;循环次数</code></pre><p>L2: POP DX;余数出栈<br>    MOV AH,2;INT21 的二号功能，输出DL（一次只输出一个商）<br>    INT 21H<br>    LOOP L2</p><pre><code>MOV AH,4CHINT 21HCODES ENDSEND START</code></pre><h4 id="知识点总结：DIV指令默认AX为被除数，当除数为8位时公式为-AX-NUM-AL-…-AH"><a href="#知识点总结：DIV指令默认AX为被除数，当除数为8位时公式为-AX-NUM-AL-…-AH" class="headerlink" title="知识点总结：DIV指令默认AX为被除数，当除数为8位时公式为(AX)/NUM=(AL)…(AH)"></a>知识点总结：DIV指令默认AX为被除数，当除数为8位时公式为(AX)/NUM=(AL)…(AH)</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 汇编实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编实验之BX二进制输出</title>
+      <link href="/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/"/>
+      <url>/2020/05/09/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E4%B9%8BBX%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BE%93%E5%87%BA/</url>
+      
+        <content type="html"><![CDATA[<h4 id="实验任务：-BX-中的无符号数以二进制的形式输出"><a href="#实验任务：-BX-中的无符号数以二进制的形式输出" class="headerlink" title="实验任务： BX 中的无符号数以二进制的形式输出"></a>实验任务： BX 中的无符号数以二进制的形式输出</h4><p>实验思路及代码：</p><p>DATAS SEGMENT<br>    ;此处输入数据段代码<br>DATAS ENDS</p><p>STACKS SEGMENT<br>    ;此处输入堆栈段代码<br>STACKS ENDS</p><p>CODES SEGMENT<br>    ASSUME CS:CODES,DS:DATAS,SS:STACKS<br>START:<br>    ;此处输入代码段代码<br>    ;将bx的数循环左移，利用最高位移到cf位的特性将最高位一个个输出亦可使用除2压栈的方法<br>    ;八进制和十六进制将使用压栈的方法</p><pre><code>MOV BX,43690;输入BXMOV CX,16;循环次数L1:ROL BX,1;左移一位，最高位保存到CF标志位MOV DL,0ADC DL,30H;带进位的加法，将结果保存到DL,其中0的ASCII为30H，所以这步得到的结果为0或1MOV AH,2;INT21 的二号功能，输出DL（一次只输出一个0或1）INT 21HLOOP L1MOV AH,4CHINT 21HCODES ENDSEND START</code></pre><h4 id="知识点总结：循环左移SHL和循环右移SHR都将移除的那位送到CF标志位，INT21二号功能输出的是ascii对应的符号所以DL要加30H。"><a href="#知识点总结：循环左移SHL和循环右移SHR都将移除的那位送到CF标志位，INT21二号功能输出的是ascii对应的符号所以DL要加30H。" class="headerlink" title="知识点总结：循环左移SHL和循环右移SHR都将移除的那位送到CF标志位，INT21二号功能输出的是ascii对应的符号所以DL要加30H。"></a>知识点总结：循环左移SHL和循环右移SHR都将移除的那位送到CF标志位，INT21二号功能输出的是ascii对应的符号所以DL要加30H。</h4>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 汇编实验 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大镔真帅！</title>
+      <link href="/2020/05/09/%E5%A4%A7%E9%95%94%E7%9C%9F%E5%B8%85/"/>
+      <url>/2020/05/09/%E5%A4%A7%E9%95%94%E7%9C%9F%E5%B8%85/</url>
+      
+        <content type="html"><![CDATA[<p>喜欢又美又臭屁的小鸡 嘿嘿</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 大镔真帅！ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
