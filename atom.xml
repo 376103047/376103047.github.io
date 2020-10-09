@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2020-10-09T02:44:21.675Z</updated>
+  <updated>2020-10-09T07:46:38.383Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/child/2020/08/20/test/"/>
-    <id>http://yoursite.com/child/2020/08/20/test/</id>
-    <published>2020-08-20T13:50:44.000Z</published>
-    <updated>2020-10-09T02:44:21.675Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><img src="/2020/08/20/test/accumulate.png" class title="这是一个新的博客的图片的说明" loading="lazy"><p><img src="https://img-blog.csdnimg.cn/20201009104007133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTU2MjEzNA==,size_16,color_FFFFFF,t_70#pic_center" alt="图片标签" loading="lazy">  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>C++入门学习笔记总结</title>
