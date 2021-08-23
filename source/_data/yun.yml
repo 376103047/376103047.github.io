@@ -21,10 +21,10 @@ tags:
   Laravel: "#F4645F"
 
 social:
-  - name: E-Mail
-  link: mailto:你的邮箱
-  icon: icon-mail-line
-  color: "#8E71C1"
+  #- name: E-Mail
+  #link: mailto:你的邮箱
+  #icon: icon-mail-line
+  #color: "#8E71C1"
 
 #首页标语动画
 banner:
