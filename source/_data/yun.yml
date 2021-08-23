@@ -131,10 +131,10 @@ menu:
 
 #页面链接
 pages:
-  - name: 我的小伙伴们
-    url: /links/
-    icon: icon-genderless-line
-    color: dodgerblue
+#  - name: 我的小伙伴们
+#    url: /links/
+#    icon: icon-genderless-line
+#    color: dodgerblue
 
 #文章卡片
 post_card:
@@ -162,9 +162,13 @@ reward:
 
 #页脚
 footer:
-  since: 1997
-  icon:
-    name: icon-cloud-line
-    animated: true
-    color: "#0078E7"
+  powered:
+    enable: false
+  support:
+    enable: false
+#  since: 1997
+#  icon:
+#    name: icon-cloud-line
+#    animated: true
+#    color: "#0078E7"
                 
