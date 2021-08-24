@@ -166,7 +166,8 @@ footer:
     enable: false
   support:
     enable: false
-
+  since:
+    enable: false
 #  since: 1997
 #  icon:
 #    name: icon-cloud-line
