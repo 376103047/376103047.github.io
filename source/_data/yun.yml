@@ -80,11 +80,11 @@ fireworks:
     - "33, 78, 194"
 
 #替换鼠标
-cursor:
-  enable: true
-  default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
-  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
-  text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
+#cursor:
+#  enable: true
+#  default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
+#  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+#  text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
 
 #侧边栏
 sidebar:
@@ -98,7 +98,7 @@ tagcloud:
 avatar:
   enable: true
   url: /images/998446.jpg
-  rounded: true
+  rounded: false
   opacity: 1
   mickey_mouse: false
   status:
