@@ -57,8 +57,8 @@ opacity: 0.8
 #搜索背景
 search:
   modal: true
-  bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-2.jpg
-  dark_bg_image: xxx
+  #bg_image: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-2.jpg
+  #dark_bg_image: xxx
   # placeholder:
 
 
@@ -97,7 +97,7 @@ tagcloud:
 #头像
 avatar:
   enable: true
-  url: /images/avatar.jpg
+  url: /images/998446.jpg
   rounded: true
   opacity: 1
   mickey_mouse: false
