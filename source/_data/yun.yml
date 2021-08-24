@@ -102,7 +102,7 @@ avatar:
   opacity: 1
   mickey_mouse: false
   status:
-    enable: true
+    enable: false
     emoji: 😭
     message: 不想上学
 
@@ -162,15 +162,3 @@ reward:
 
 #页脚
 footer:
-  powered:
-    enable: false
-  support:
-    enable: false
-  since:
-    enable: false
-#  since: 1997
-#  icon:
-#    name: icon-cloud-line
-#    animated: true
-#    color: "#0078E7"
-                
