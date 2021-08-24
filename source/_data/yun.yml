@@ -80,8 +80,8 @@ fireworks:
     - "33, 78, 194"
 
 #替换鼠标
-#cursor:
-#  enable: true
+cursor:
+  enable: true
 #  default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
 #  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
 #  text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
@@ -162,4 +162,6 @@ reward:
 
 #页脚
 footer:
-  since: 2021  
+  powered:
+    enable: false
+  
